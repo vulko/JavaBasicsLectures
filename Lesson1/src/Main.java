@@ -1,11 +1,24 @@
 import kvolkov.java.lesson_basics.lesson1.BaseTypes;
 import kvolkov.java.lesson_basics.lesson1.ComplexTypes;
 import kvolkov.java.lesson_basics.lesson1.Point;
+import kvolkov.java.lesson_basics.lesson2.InterfaceExample;
 
 public class Main {		
 	
+	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		
+//		lesson1();
+				
+		InterfaceExample ifaceExample = new InterfaceExample();
+		
+		for (int i = 0; i < 100; ++i) {
+			ifaceExample.addProgress(10);
+		}
+
+	}
+	
+	private static void lesson1() {
 		BaseTypes.baseTypes.printByte();		
 		BaseTypes.baseTypes.printShort();
 		BaseTypes.baseTypes.printAutoType();
@@ -24,7 +37,6 @@ public class Main {
 		
 		Point point2 = new Point();
 		point2.printMe();
-
 	}
 
 }

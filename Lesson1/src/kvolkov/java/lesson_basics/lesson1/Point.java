@@ -12,7 +12,12 @@ public class Point {
 	public void setY(int value) { y = value; }
 	
 	public void printMe() {
-		System.out.println("X = " + x + " | Y = " + y);
+		System.out.println(toString());
 	}
-
+	
+	@Override
+	public String toString() {
+		return "X = " + x + " | Y = " + y;		
+	}
+	
 }
