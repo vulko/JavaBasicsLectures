@@ -2,6 +2,7 @@ import kvolkov.java.lesson_basics.lesson1.BaseTypes;
 import kvolkov.java.lesson_basics.lesson1.ComplexTypes;
 import kvolkov.java.lesson_basics.lesson1.Point;
 import kvolkov.java.lesson_basics.lesson2.InterfaceExample;
+import kvolkov.java.lesson_basics.lesson3.MinRouteFinder;
 
 public class Main {		
 	
@@ -9,12 +10,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 //		lesson1();
-				
-		InterfaceExample ifaceExample = new InterfaceExample();
+			
+//		lesson2();
 		
-		for (int i = 0; i < 100; ++i) {
-			ifaceExample.addProgress(10);
-		}
+		MinRouteFinder.execute();
 
 	}
 	
@@ -37,6 +36,14 @@ public class Main {
 		
 		Point point2 = new Point();
 		point2.printMe();
+	}
+	
+	private static void lesson2() {
+		InterfaceExample ifaceExample = new InterfaceExample();
+		
+		for (int i = 0; i < 100; ++i) {
+			ifaceExample.addProgress(10);
+		}
 	}
 
 }

@@ -2,7 +2,7 @@ package kvolkov.java.lesson_basics.lesson1;
 
 public class Point {
 	
-	private static int x = 0;
+	private int x = 0;
 	private int y = 0;
 	
 	public int getX() { return x; }	
@@ -11,13 +11,17 @@ public class Point {
 	public int getY() { return y; }	
 	public void setY(int value) { y = value; }
 	
+	public int getRadiusVector() {
+		return (int) Math.sqrt(x * x + y * y);
+	}
+	
 	public void printMe() {
 		System.out.println(toString());
 	}
 	
 	@Override
 	public String toString() {
-		return "X = " + x + " | Y = " + y;		
+		return "{ " + x + " ; " + y + " }";		
 	}
 	
 }
