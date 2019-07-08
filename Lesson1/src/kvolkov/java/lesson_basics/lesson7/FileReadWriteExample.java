@@ -1,5 +1,6 @@
 package kvolkov.java.lesson_basics.lesson7;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,10 +10,12 @@ import java.io.IOException;
 
 public class FileReadWriteExample {
 	
+	private static final String sPath = "E:\\tmp\\";
+	
 	public static void writeFile() {
 		FileOutputStream out = null;
 		try {
-			out = new FileOutputStream("result.txt");
+			out = new FileOutputStream(sPath + "result.txt");
 			
 			out.write(5);
 			out.write(2);
@@ -39,7 +42,7 @@ public class FileReadWriteExample {
 	public static void readFile() {
 		FileInputStream in = null;
 		try {
-			in = new FileInputStream("result.txt");
+			in = new FileInputStream(sPath + "result.txt");
 			
 			System.out.println(in.read());
 			System.out.println(in.read());
@@ -64,7 +67,7 @@ public class FileReadWriteExample {
 	public static void writeCharFile() {
 		FileWriter out = null;
 		try {
-			out = new FileWriter("result.txt");
+			out = new FileWriter(sPath + "result.txt");
 			
 			out.write("- Привет, ");
 			out.write("  Михалыч!");
@@ -91,7 +94,7 @@ public class FileReadWriteExample {
 	public static void readCharFile() {
 		FileReader in = null;
 		try {
-			in = new FileReader("result.txt");
+			in = new FileReader(sPath + "result.txt");
 			
 			char[] data = new char[100];
 			boolean hasData = true;
@@ -118,6 +121,21 @@ public class FileReadWriteExample {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	public static void checkAndCreateFile() {
+		File file = new File(sPath + "test.file");
+		if (!file.exists()) {
+			System.out.println("File doesn't exist!");
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("File already exists!");			
 		}
 	}
 

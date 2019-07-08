@@ -44,6 +44,8 @@ public class Main {
 		FileReadWriteExample.writeCharFile();
 		FileReadWriteExample.readCharFile();
 		
+		FileReadWriteExample.checkAndCreateFile();
+		
 	}
 	
 	private static void lesson1() {
