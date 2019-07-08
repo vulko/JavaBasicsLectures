@@ -5,6 +5,8 @@ import kvolkov.java.lesson_basics.lesson2.InterfaceExample;
 import kvolkov.java.lesson_basics.lesson3.MinRouteFinder;
 import kvolkov.java.lesson_basics.lesson4.MinRouteFinderWithList;
 import kvolkov.java.lesson_basics.lesson5.PersonFinder;
+import kvolkov.java.lesson_basics.lesson6.GenericsExample;
+import kvolkov.java.lesson_basics.lesson7.FileReadWriteExample;
 
 public class Main {	
 	
@@ -32,22 +34,16 @@ public class Main {
 //		
 //		lesson5();
 		
-		PersonFinder personFinder = new PersonFinder();
-		personFinder.initPersonMapWithIds();
-		personFinder.findIndexedPersonByName("Никифор");
-		System.out.println("Done");
+//		lesson5_1();
 		
+//		lesson6();
 		
-		while (true) {
-//			System.out.println("I'm still running!");
-			try {
-				Thread.currentThread().sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
+		FileReadWriteExample.writeFile();
+		FileReadWriteExample.readFile();
+		
+		FileReadWriteExample.writeCharFile();
+		FileReadWriteExample.readCharFile();
+		
 	}
 	
 	private static void lesson1() {
@@ -103,6 +99,17 @@ public class Main {
 		MinRouteFinderWithList minRouteFinder = new MinRouteFinderWithList();
 		minRouteFinder.initList();
 		minRouteFinder.findMixRoute();		
+	}
+	
+	private static void lesson5_1() {
+		PersonFinder personFinder = new PersonFinder();
+		personFinder.initPersonMapWithIds();
+		personFinder.findIndexedPersonByName("Никифор");
+		System.out.println("Done");
+	}
+	
+	private static void lesson6() {
+		GenericsExample.execute();		
 	}
 	
 	private static void modifyParameter(SomeObject in) {
