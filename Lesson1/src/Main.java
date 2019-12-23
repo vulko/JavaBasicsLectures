@@ -1,5 +1,9 @@
+import java.lang.reflect.Parameter;
+import java.util.function.BiFunction;
+
 import kvolkov.java.lesson_basics.lesson1.BaseTypes;
 import kvolkov.java.lesson_basics.lesson1.ComplexTypes;
+import kvolkov.java.lesson_basics.lesson1.InnerClassExample;
 import kvolkov.java.lesson_basics.lesson1.Point;
 import kvolkov.java.lesson_basics.lesson2.InterfaceExample;
 import kvolkov.java.lesson_basics.lesson3.MinRouteFinder;
@@ -38,14 +42,18 @@ public class Main {
 		
 //		lesson6();
 		
-		FileReadWriteExample.writeFile();
-		FileReadWriteExample.readFile();
+
+	
+//		lambdaExample();
+//		lambdaExample1();
+//		lambdaExample2();
 		
-		FileReadWriteExample.writeCharFile();
-		FileReadWriteExample.readCharFile();
+
+//		InnerClassExample example = new InnerClassExample();
+//		example.run();
 		
-		FileReadWriteExample.checkAndCreateFile();
-		
+		kvolkov.java.lesson_basics.lesson1.InterfaceExample example = new kvolkov.java.lesson_basics.lesson1.InterfaceExample();
+		example.run();
 	}
 	
 	private static void lesson1() {
@@ -114,6 +122,16 @@ public class Main {
 		GenericsExample.execute();		
 	}
 	
+	private static void lesson7() {
+		FileReadWriteExample.writeFile();
+		FileReadWriteExample.readFile();
+		
+		FileReadWriteExample.writeCharFile();
+		FileReadWriteExample.readCharFile();
+		
+		FileReadWriteExample.checkAndCreateFile();
+	}
+	
 	private static void modifyParameter(SomeObject in) {
 		in.isMe = false;
 	}
@@ -125,5 +143,57 @@ public class Main {
 	private static boolean modifyBool(boolean in) {
 		return !in;
 	}
+	
+	
+	@FunctionalInterface
+	interface FuncInterface { 
+	    void invokeLambda(int x, String name);  
+	} 
+	
+	private static void lambdaExample() {
+        FuncInterface fobj = (int x, String name) -> {
+        	System.out.println("Hello, " + name);
+        	System.out.println("I'm lambda!");
+        	System.out.println("You sent me " + x);
+        };
+
+        fobj.invokeLambda(5, "Kirill");
+
+	}
+	
+	private static void lambdaExample1() {
+		BiFunction<Integer, Integer, Boolean> fn = (Integer x, Integer y) -> {
+        	System.out.println("   x = " + x);
+        	System.out.println("   y = " + y);
+        	return x > y;
+        };
+        
+    	System.out.println( fn.apply(5, 6) ? "x > y " : "x <= y");
+    	System.out.println( fn.apply(10, 6) ? "x > y " : "x <= y");
+	}
+	
+	@FunctionalInterface
+	interface SimpleLambda { 
+	    boolean invokeLambda();  
+	}
+	
+	private static boolean invokeLambdaExample(SimpleLambda lambda) {
+		return lambda.invokeLambda();
+	}
+	
+	private static void lambdaExample2() {
+		
+		if (invokeLambdaExample(
+									() -> { return 51 > 10; }
+								)
+			) {
+			System.out.println("true!");
+		} else {
+			System.out.println("false!");			
+		}
+		
+	}
+	
+
 
 }
