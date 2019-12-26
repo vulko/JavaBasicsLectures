@@ -5,7 +5,7 @@ import kvolkov.java.lesson_basics.lesson1.BaseTypes;
 import kvolkov.java.lesson_basics.lesson1.ComplexTypes;
 import kvolkov.java.lesson_basics.lesson1.InnerClassExample;
 import kvolkov.java.lesson_basics.lesson1.Point;
-import kvolkov.java.lesson_basics.lesson2.InterfaceExample;
+import kvolkov.java.lesson_basics.lesson2.ListenerExample;
 import kvolkov.java.lesson_basics.lesson3.MinRouteFinder;
 import kvolkov.java.lesson_basics.lesson4.MinRouteFinderWithList;
 import kvolkov.java.lesson_basics.lesson5.PersonFinder;
@@ -25,12 +25,11 @@ public class Main {
 		}
 	}
 	
-	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		
 //		lesson1();
 //		
-//		lesson2();
+		lesson2();
 //
 //		lesson3();
 //		
@@ -52,8 +51,8 @@ public class Main {
 //		InnerClassExample example = new InnerClassExample();
 //		example.run();
 		
-		kvolkov.java.lesson_basics.lesson1.InterfaceExample example = new kvolkov.java.lesson_basics.lesson1.InterfaceExample();
-		example.run();
+//		kvolkov.java.lesson_basics.lesson1.PrintableExample example = new kvolkov.java.lesson_basics.lesson1.PrintableExample();
+//		example.run();
 	}
 	
 	private static void lesson1() {
@@ -80,11 +79,8 @@ public class Main {
 	}
 	
 	private static void lesson2() {
-		InterfaceExample ifaceExample = new InterfaceExample();
-		
-		for (int i = 0; i < 100; ++i) {
-			ifaceExample.addProgress(10);
-		}
+		ListenerExample example = new ListenerExample();
+		example.run();
 	}
 	
 	private static void lesson3() {

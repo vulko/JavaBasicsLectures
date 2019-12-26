@@ -1,6 +1,6 @@
 package kvolkov.java.lesson_basics.lesson1;
 
-public class InterfaceExample {
+public class PrintableExample {
 	
 	private interface Printable {
 		public void printMe();
@@ -15,9 +15,10 @@ public class InterfaceExample {
 		}
 
 		@Override
-		public void printMessage(String msg) {			
+		public void printMessage(String msg) {	
 			System.out.println(this.getClass().getSimpleName() + " sais " + msg);
 		}
+
 	
 	}
 	

@@ -1,6 +1,6 @@
 package kvolkov.java.lesson_basics.lesson2;
 
-public interface ValueChangeListener {
+public interface ProgressChangeListener {
 
 	void onValueChanged(int newValue);
 	
